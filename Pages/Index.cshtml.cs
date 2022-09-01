@@ -14,6 +14,7 @@ namespace app.constososales.webapp.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        private IConfiguration _configuration;
 
         private static string Host = "";
         private static string User = "";
@@ -21,23 +22,29 @@ namespace app.constososales.webapp.Pages
         private static string Password = "";
         private static string Port = "";
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         public void OnGet()
         {
             var MyConfig = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
 
-            var Host = MyConfig.GetValue<string>("AppSettings:Host");
-            var User = MyConfig.GetValue<string>("AppSettings:User");
-            var DBname = MyConfig.GetValue<string>("AppSettings:DBname");
-            var Password = MyConfig.GetValue<string>("AppSettings:Password");
-            var Port = MyConfig.GetValue<string>("AppSettings:Port");
+            //var Host = MyConfig.GetValue<string>("AppSettings:Host");
+            //var User = MyConfig.GetValue<string>("AppSettings:User");
+            //var DBname = MyConfig.GetValue<string>("AppSettings:DBname");
+            //var Password = MyConfig.GetValue<string>("AppSettings:Password");
+            //var Port = MyConfig.GetValue<string>("AppSettings:Port");
 
+            var Host = _configuration.GetConnectionString("Host");
+            var User = _configuration.GetConnectionString("User");
+            var DBname = _configuration.GetConnectionString("DBname");
+            var Password = _configuration.GetConnectionString("Password");
+            var Port = _configuration.GetConnectionString("Port");
 
-
+          
             string connString =
                String.Format(
                    "Server={0};Username={1};Database={2};Port={3};Password={4};SSLMode=Prefer",
