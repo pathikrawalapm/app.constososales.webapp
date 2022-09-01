@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Npgsql;
+using Microsoft.Extensions.Configuration;
+
 
 namespace app.constososales.webapp.Pages
 {
@@ -13,11 +15,11 @@ namespace app.constososales.webapp.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        private static string Host = "psql-contososales-uksouth-dev.postgres.database.azure.com";
-        private static string User = "psqladmin@psql-contososales-uksouth-dev";
-        private static string DBname = "salesdb";
-        private static string Password = "@mYD9@wp6zE3%rKLBJG2iSXb";
-        private static string Port = "5432";
+        private static string Host = "";
+        private static string User = "";
+        private static string DBname = "";
+        private static string Password = "";
+        private static string Port = "";
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -26,6 +28,16 @@ namespace app.constososales.webapp.Pages
 
         public void OnGet()
         {
+            var MyConfig = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+
+            var Host = MyConfig.GetValue<string>("AppSettings:Host");
+            var User = MyConfig.GetValue<string>("AppSettings:User");
+            var DBname = MyConfig.GetValue<string>("AppSettings:DBname");
+            var Password = MyConfig.GetValue<string>("AppSettings:Password");
+            var Port = MyConfig.GetValue<string>("AppSettings:Port");
+
+
+
             string connString =
                String.Format(
                    "Server={0};Username={1};Database={2};Port={3};Password={4};SSLMode=Prefer",
@@ -56,11 +68,11 @@ namespace app.constososales.webapp.Pages
 
                 using (var command = new NpgsqlCommand("INSERT INTO inventory (name, quantity) VALUES (@n1, @q1), (@n2, @q2), (@n3, @q3)", conn))
                 {
-                    command.Parameters.AddWithValue("n1", "banana");
+                    command.Parameters.AddWithValue("n1", "banana11");
                     command.Parameters.AddWithValue("q1", 150);
-                    command.Parameters.AddWithValue("n2", "orange");
+                    command.Parameters.AddWithValue("n2", "orange222");
                     command.Parameters.AddWithValue("q2", 154);
-                    command.Parameters.AddWithValue("n3", "apple");
+                    command.Parameters.AddWithValue("n3", "apple22");
                     command.Parameters.AddWithValue("q3", 100);
 
                     int nRows = command.ExecuteNonQuery();
