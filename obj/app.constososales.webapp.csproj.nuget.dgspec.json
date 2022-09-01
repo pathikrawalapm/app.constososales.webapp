@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pathikrawal\\source\\reposms\\TerraFormAzureDevOps\\app.constososales.webapp\\app.constososales.webapp.csproj": {}
+    "C:\\Users\\pathikrawal\\source\\reposms\\app.constososales.webapp\\app.constososales.webapp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pathikrawal\\source\\reposms\\TerraFormAzureDevOps\\app.constososales.webapp\\app.constososales.webapp.csproj": {
+    "C:\\Users\\pathikrawal\\source\\reposms\\app.constososales.webapp\\app.constososales.webapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pathikrawal\\source\\reposms\\TerraFormAzureDevOps\\app.constososales.webapp\\app.constososales.webapp.csproj",
+        "projectUniqueName": "C:\\Users\\pathikrawal\\source\\reposms\\app.constososales.webapp\\app.constososales.webapp.csproj",
         "projectName": "app.constososales.webapp",
-        "projectPath": "C:\\Users\\pathikrawal\\source\\reposms\\TerraFormAzureDevOps\\app.constososales.webapp\\app.constososales.webapp.csproj",
+        "projectPath": "C:\\Users\\pathikrawal\\source\\reposms\\app.constososales.webapp\\app.constososales.webapp.csproj",
         "packagesPath": "C:\\Users\\pathikrawal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pathikrawal\\source\\reposms\\TerraFormAzureDevOps\\app.constososales.webapp\\obj\\",
+        "outputPath": "C:\\Users\\pathikrawal\\source\\reposms\\app.constososales.webapp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -42,6 +42,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Npgsql": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

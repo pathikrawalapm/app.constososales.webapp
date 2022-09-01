@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "UM028nZZXhM8BA3CTZwNcTb+EEgSL0OFBB0qlb2sVPAbO54S1Xlt9Cs/OU2rNqeM1jf+fl5pBfvl0vTgv8nxFQ==",
+  "dgSpecHash": "Glxz8o7kUh+pYTe9xzuGIDlTbhlg3u2RIwQ33RshEOFnz2fiXA3GFZXR7mZkXPu4/9qun3D9iLXLjJAmls6oOw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pathikrawal\\source\\reposms\\TerraFormAzureDevOps\\app.constososales.webapp\\app.constososales.webapp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\pathikrawal\\source\\reposms\\app.constososales.webapp\\app.constososales.webapp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pathikrawal\\.nuget\\packages\\npgsql\\6.0.6\\npgsql.6.0.6.nupkg.sha512",
+    "C:\\Users\\pathikrawal\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\pathikrawal\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\pathikrawal\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
