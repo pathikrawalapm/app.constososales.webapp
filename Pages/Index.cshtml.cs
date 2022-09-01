@@ -50,7 +50,7 @@ namespace app.constososales.webapp.Pages
             using (var conn = new NpgsqlConnection(connString))
 
             {
-                Console.Out.WriteLine("Opening connection");
+                Console.Out.WriteLine("Opening the connection");
                 conn.Open();
 
                 using (var command = new NpgsqlCommand("DROP TABLE IF EXISTS inventory", conn))
