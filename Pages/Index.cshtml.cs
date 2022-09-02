@@ -63,14 +63,14 @@ namespace app.constososales.webapp.Pages
                 using (var command = new NpgsqlCommand("DROP TABLE IF EXISTS inventory", conn))
                 {
                     command.ExecuteNonQuery();
-                    Console.Out.WriteLine("Finished dropping table (if existed)");
+                   // Console.Out.WriteLine("Finished dropping table (if existed)");
 
                 }
 
                 using (var command = new NpgsqlCommand("CREATE TABLE inventory(id serial PRIMARY KEY, name VARCHAR(50), quantity INTEGER)", conn))
                 {
                     command.ExecuteNonQuery();
-                    Console.Out.WriteLine("Finished creating table");
+                    //Console.Out.WriteLine("Finished creating table");
                 }
 
                 using (var command = new NpgsqlCommand("INSERT INTO inventory (name, quantity) VALUES (@n1, @q1), (@n2, @q2), (@n3, @q3)", conn))
@@ -87,8 +87,25 @@ namespace app.constososales.webapp.Pages
                 }
             }
 
-            Console.WriteLine("Press RETURN to exit");
-            Console.ReadLine();
+            using (var conn = new NpgsqlConnection(connString))
+            {
+
+               // Console.Out.WriteLine("Opening connection");
+                conn.Open();
+
+
+                using (var command = new NpgsqlCommand("SELECT * FROM inventory", conn))
+                {
+
+                    var reader = command.ExecuteReader();
+                   
+                    reader.Close();
+                }
+            }
+
+
+           // Console.WriteLine("Press RETURN to exit");
+           // Console.ReadLine();
         }
     }
 }
